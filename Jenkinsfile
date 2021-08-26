@@ -6,7 +6,7 @@ pipeline {
 
     stage('JIRA Comment') 
     steps {
-    { withEnv(['JIRA_SITE=JIRA']) {  node('EPM-PAY') 
+     withEnv(['JIRA_SITE=JIRA']) {  node('EPM-PAY') 
     {
     def comment = [ body: 'Build completed' ]
     jjid = 'nextid'
@@ -18,4 +18,4 @@ pipeline {
 
   
   
-  } }
+  } 
