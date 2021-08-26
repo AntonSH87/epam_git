@@ -1,12 +1,6 @@
-pipeline {
-  agent any
-  stages {
+node { 
 
-
-
-    stage('JIRA Comment') 
-    steps {
-     withEnv(['JIRA_SITE=JIRA']) {  node('EPM-PAY') 
+    stage('JIRA Comment') { withEnv(['JIRA_SITE=JIRA']) {  node('EPM-PAY') 
     {
     def comment = [ body: 'Build completed' ]
     jjid = 'nextid'
@@ -14,8 +8,4 @@ pipeline {
        jjid = jid
       jiraAddComment idOrKey: jjid , input: comment }
         
-                                  } } }
-
-  
-  
-  } 
+} } }
